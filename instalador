@@ -112,7 +112,7 @@ if [ -f /etc/banner ];
 then
 echo "Banner Detectado"
 else
-wget -o /dev/null -O- wget https://www.dropbox.com/s/wd85e7oe7z15ewp/banner > /etc/banner
+wget -o /dev/null -O- wget https://raw.githubusercontent.com/ThonyDroidYT/VPS-Pack-3.7.2/main/Request/banner > /etc/banner
 fi
 chmod +x /root/dropbear
 }
