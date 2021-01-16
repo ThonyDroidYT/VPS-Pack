@@ -1,6 +1,6 @@
 #!/bin/bash
-
-vpspackversion=3.6.5
+#vpspackversion=3.6.5
+vpspackversion=3.5k
 OS=`uname -m`;
 fecha=`date`;
 MYIP=`hostname -I | awk '{print $1}'`;
@@ -71,7 +71,7 @@ rm -rf /bin/redefinirusuario
 wget -o /dev/null -O- https://www.dropbox.com/s/kjjcv1us3tp5bxa/redefinirusuario > /bin/redefinirusuario
 chmod +x /bin/redefinirusuario
 rm -rf /bin/vpspack
-wget -o /dev/null -O- https://www.dropbox.com/s/pcm1manlhcneun1/vpspack > /bin/vpspack
+wget -o /dev/null -O- https://raw.githubusercontent.com/ThonyDroidYT/VPS-Pack/version/3.5k/Request/vpspack > /bin/vpspack
 chmod +x /bin/vpspack
 rm -rf /bin/speedtest.py
 wget -o /dev/null -O- https://www.dropbox.com/s/ro0nc7jsj6zo3jo/speedtest.py > /bin/speedtest.py
@@ -112,7 +112,7 @@ if [ -f /etc/banner ];
 then
 echo "Banner Detectado"
 else
-wget -o /dev/null -O- wget https://www.dropbox.com/s/wd85e7oe7z15ewp/banner > /etc/banner
+wget -o /dev/null -O- wget https://raw.githubusercontent.com/ThonyDroidYT/VPS-Pack/version/3.5k/Request/banner > /etc/banner
 fi
 chmod +x /root/dropbear
 }
