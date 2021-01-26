@@ -1,7 +1,9 @@
 #!/bin/bash
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
+mkdir ${SCPfrm}
+mkdir ${SCPinst}
 SCPfrm="/etc/VpsPackdir" && [[ ! -d ${SCPfrm} ]] && exit
-SCPinst="/etc/VpsPackdir" && [[ ! -d ${SCPinst} ]] && exit
+SCPinst="/etc/VpsPackdir/Sockspy" && [[ ! -d ${SCPinst} ]] && exit
 meu_ip () {
 if [[ -e /etc/MEUIPADM ]]; then
 echo "$(cat /etc/MEUIPADM)"
@@ -137,6 +139,12 @@ for pid in $(echo $pids); do
 kill -9 $pid &>/dev/null
 done
 }
+descargar_files () {
+wget -O ${SCPinst}/PDirect.py https://raw.githubusercontent.com/ThonyDroidYT/VPS-Pack/version/5.8/Install/PDirect.py
+wget -O ${SCPinst}/PPub.py https://raw.githubusercontent.com/ThonyDroidYT/VPS-Pack/version/5.8/Install/PPub.py
+wget -O ${SCPinst}/PPriv.py https://raw.githubusercontent.com/ThonyDroidYT/VPS-Pack/version/5.8/Install/PPriv.py
+wget -O ${SCPinst}/POpen.py https://raw.githubusercontent.com/ThonyDroidYT/VPS-Pack/version/5.8/Install/POpen.py
+}
 remove_fun () {
 msg -ama "$(fun_trans "Parando Socks Python")"
 msg -bar
@@ -194,4 +202,5 @@ msg -ne " $(fun_trans "Digite un Texto de Status"): " && read texto_soket
 msg -ama " $(fun_trans "Procedimento Concluido")"
 msg -bar
 }
+descargar_files
 iniciarsocks
